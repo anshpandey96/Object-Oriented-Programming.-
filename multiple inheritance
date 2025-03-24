@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+class Rectangle 
+{
+public:
+    double length, breadth;
+    Rectangle(double l, double b) : length(l), breadth(b) {}
+    double area() { return length * breadth; }
+};
+
+class Solid 
+{
+public:
+    double height;
+    Solid(double h) : height(h) {}
+};
+
+class Cuboid : public Rectangle, public Solid
+{
+public:
+    Cuboid(double l, double b, double h) : Rectangle(l, b), Solid(h) {}
+    double volume() { return area() * height; }
+};
+
+int main() 
+{
+    Cuboid c(5, 3, 4);
+    cout << "Area: " << c.area() << "\nVolume: " << c.volume() << endl;
+    return 0;
+}
