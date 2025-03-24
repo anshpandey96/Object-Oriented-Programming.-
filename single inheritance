@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+class Shape {  // Base class
+    public:
+    int l, b;
+
+    void input() {
+        cout << "Enter length: ";
+        cin >> l;
+        cout << "Enter breadth: ";
+        cin >> b;
+    }
+};
+
+class Rectangle : public Shape 
+{ 
+    public:
+    void show() {
+        cout << "Length is: " << l << endl;
+        cout << "Breadth is: " << b << endl;
+    }
+};
+
+int main() {
+    Rectangle a;
+    a.input(); 
+    a.show(); 
+    return 0;
+}
