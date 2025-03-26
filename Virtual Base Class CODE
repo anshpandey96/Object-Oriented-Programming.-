@@ -1,0 +1,36 @@
+//CODE FOR VIRTUAL BASE CLASS # Dimond problem in multiple inheritance 
+#include<iostream>
+using namespace std;
+class A{
+    public:
+    int a ;
+    int b;
+    void show(){cout<<a<<endl;}
+};
+class B:virtual public A{
+    public:
+    int z;
+    int y;
+};
+class C:virtual A{
+    public:
+    int p;
+    int q;
+};
+class D:public B,public C{
+    public:
+    int j;
+    int k;
+};
+int main (){
+    D s1;
+    s1.a=10;
+    s1.show();
+    s1.a=122;
+    s1.show();
+    s1.B::a=20;
+    s1.show();
+
+
+
+}
