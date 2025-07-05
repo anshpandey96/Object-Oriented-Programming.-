@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+void swap(int* a, int* b) {
+    int temp = *a;  // store the value pointed by a
+    *a = *b;        // assign value pointed by b to location pointed by a
+    *b = temp;      // assign stored value to location pointed by b
+}
+
+int main() {
+    int x = 5, y = 10;
+
+    cout << "Before swapping: x = " << x << ", y = " << y << endl;
+
+    swap(&x, &y);  // pass addresses of x and y
+
+    cout << "After swapping: x = " << x << ", y = " << y << endl;
+
+    return 0;
+}
